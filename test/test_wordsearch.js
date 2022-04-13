@@ -28,12 +28,28 @@ const wordSearch = require('../wordsearch.js')
       ['T', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
       ['E', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
       ['R', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
-      ['N', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['A', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
       ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
       ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
     ], 'BUSTER')
 
     assert.isTrue(result);
+  });
+
+  it("should return false if the word isn't listed in sequence", function() {
+    const result = wordSearch([
+      ['N', 'R', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['A', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['M', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['J', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['O', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['O', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['X', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['N', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['X', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'NAMJOON')
+
+    assert.isFalse(result);
   });
   
 

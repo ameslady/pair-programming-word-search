@@ -4,11 +4,11 @@ const wordSearch = (letters, word) => {
     if (letters.length === 0) return false;
     
     // joins letters horizonially
-    const horizontalJoin = letters.map(ls => ls.join(''))
+    const horizontalJoin = letters.map(ls => ls.join(''));
     
     // joins vertical letters by first transposing the letters matrix
     const transposedGrid = letters[0].map((_, colIndex) => letters.map(row => row[colIndex]));
-    const verticalJoin = transposedGrid.map(ls => ls.join(''))
+    const verticalJoin = transposedGrid.map(ls => ls.join(''));
     
     // checks for a word match both horizontally and vertically
     for (x of horizontalJoin) {
